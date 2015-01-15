@@ -1,8 +1,25 @@
 ﻿<Window x:Class="Sohcahtoa.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Sohcahtoa" SizeToContent="Height" Width="200">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Label Content="Angle" Grid.Column="0" Grid.Row="0"/>
+    <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Angle, Mode=TwoWay}"/>
+    <Label Content="Hypoténuse" Grid.Column="0" Grid.Row="1"/>
+    <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Hypotenuse, Mode=TwoWay}"/>
+    <Label Content="Opposé" Grid.Column="0" Grid.Row="2"/>
+    <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Oppose, Mode=TwoWay}"/>
+    <Label Content="Adjacent" Grid.Column="0" Grid.Row="3"/>
+    <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Adjacent, Mode=TwoWay}"/>
+  </Grid>
 </Window>
