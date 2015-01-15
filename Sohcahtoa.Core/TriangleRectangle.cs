@@ -39,8 +39,8 @@ namespace Sohcahtoa.Core
       set
       {
         _hypotenuse = value;
+        _adjacent = Math.Cos(_angle) * _hypotenuse;
         _oppose = Math.Sqrt(_hypotenuse * _hypotenuse - _adjacent * _adjacent);
-        _angle = Math.Asin(Sinus(_adjacent, _oppose));
       }
     }
 
@@ -50,8 +50,8 @@ namespace Sohcahtoa.Core
       set
       {
         _adjacent = value;
-        _oppose = Math.Sqrt(_adjacent * _adjacent - _hypotenuse * _hypotenuse);
-        _angle = Math.Asin(Sinus(_oppose, _adjacent));
+        _hypotenuse = _adjacent / Math.Cos(_angle);
+        _oppose = Math.Sqrt(_hypotenuse * _hypotenuse - _adjacent * _adjacent);
       }
     }
 
@@ -61,8 +61,9 @@ namespace Sohcahtoa.Core
       set
       {
         _angle = value;
-        _hypotenuse = _adjacent * Math.Tan(_angle);
+        _hypotenuse = _adjacent / Math.Cos(_angle);
         _oppose = _hypotenuse * Math.Sin(_angle);
+
       }
     }
 
