@@ -62,7 +62,7 @@ namespace Sohcahtoa.Core
       {
         _angle = value;
         _hypotenuse = _adjacent / Math.Cos(_angle);
-        _oppose = _hypotenuse * Math.Sin(_angle);
+        _oppose = _adjacent * Math.Tan(_angle);
 
       }
     }
